@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous email sender</title>
+    <style>
+        .subject {
+            width: 80%;
+            font-family: arial, sans-serif;
+            font-size: 100%;
+        }
+    </style>
+
+    <script>
+        function resetFileInput() {
+            var fileInput = document.getElementById("fileInput");
+            fileInput.value = ""; // Reset the file input value
+        }
+    </script>
+
+</head>
+
+<body>
+    <form action="http://localhost:5000/result" method="POST" enctype="multipart/form-data">
+
+        <table>
+            <tr>
+                <td>
+                    <Label>From : </Label>
+                    <input type="text" value="vivekgameloop@gmail.com">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <Label>To : </Label>
+                    <input type="text" name="toname" id="toname">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <Label>Subject : </Label>
+                    <input name="subject" value="" type="text" size="40" class="subject" aria-labelledby="l-s">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <Label>Body : </Label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea name="bodyemail" id="bodyemail" cols="50" rows="20"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap=""><img src="https://ssl.gstatic.com/ui/v1/icons/mail/images/paperclip.gif"
+                        width="15" height="15" border="0" alt="Attachment">Attachments : </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="file" name="fileinput" id="fileinput">
+                    <button type="button" onclick="resetFileInput()">Reset File</button>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="Send">
+                    <input type="reset" value="Discard">
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+
+</html>
